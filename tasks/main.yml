@@ -6,6 +6,10 @@
   run_once: yes
   delegate_to: localhost
 
+- name: import prepare.yml
+  ansible.builtin.import_tasks: prepare.yml
+  run_once: yes
+
 - name: install requirements
   ansible.builtin.package:
     name: "{{ crowd_requirements }}"
