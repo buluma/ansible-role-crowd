@@ -1,0 +1,36 @@
+---
+
+- name: test if crowd_destination is set correctly
+  ansible.builtin.assert:
+    that:
+      - crowd_destination is defined
+      - crowd_destination is string
+    quiet: yes
+
+- name: test if crowd_version is set correctly
+  ansible.builtin.assert:
+    that:
+      - crowd_version is defined
+      - crowd_version is string
+    quiet: yes
+
+- name: test if crowd_output is set correctly
+  ansible.builtin.assert:
+    that:
+      - crowd_output is defined
+      - crowd_output is string
+    quiet: yes
+
+- name: test if crowd_run_now is set correctly
+  ansible.builtin.assert:
+    that:
+      - crowd_run_now is defined
+      - crowd_run_now is boolean
+    quiet: yes
+
+- name: test if crowd_cronjob is set correctly
+  ansible.builtin.assert:
+    that:
+      - crowd_cronjob is defined
+      - crowd_cronjob is boolean
+    quiet: yes
