@@ -8,4 +8,17 @@
 ansible>=2.10
 # Some Jinja2 filters are used that are available in the newer releases.
 jinja2>=2.11.2
+ansible-lint
+ansible-runner
+ansible-runner-http
+argcomplete
+docker
+flake8
 jmespath
+molecule
+molecule-docker
+molecule-vagrant
+netaddr
+openshift
+python-vagrant
+yamllint

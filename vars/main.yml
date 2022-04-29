@@ -3,28 +3,18 @@
 
 _crowd_requirements:
   default:
-    - fontconfig
+    # - fontconfig
     - tar
-    - python3-setuptools
-    - python3-venv
-    - python3-virtualenv
-    - python3-wheel
     - rsync
     - unzip
     - util-linux
     - xz-utils
     - zip
   RedHat:
-    - fontconfig
-    - lxml
     - rsync
     - shadow-utils
     - tar
     - unzip
-    - util-linux
-    - xz
-    - yum-plugin-versionlock
-    - yum-utils
     - zip
 
 crowd_requirements: "{{ _crowd_requirements[ansible_os_family] | default(_crowd_requirements['default'] ) }}"

@@ -10,9 +10,9 @@
   ansible.builtin.import_tasks: prepare.yml
   run_once: yes
 
-# - name: install requirements
-#  ansible.builtin.package:
-#  name: "{{ crowd_requirements }}"
+- name: install requirements
+  ansible.builtin.package:
+    name: "{{ crowd_requirements }}"
 
 - name: groupadd
   ansible.builtin.group:
