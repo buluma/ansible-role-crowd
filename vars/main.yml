@@ -6,6 +6,7 @@ _crowd_requirements:
     - fontconfig
   RedHat:
     - fontconfig
+    - lxml
 
 crowd_requirements: "{{ _crowd_requirements[ansible_os_family] | default(_crowd_requirements['default'] ) }}"
 

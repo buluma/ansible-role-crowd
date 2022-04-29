@@ -94,8 +94,8 @@
     executable: "/bin/bash"
     creates: "/var/log/ansible/{{ crowd_download.checksum }}-unarchive.log"
   notify:
-    - crowd | systemctl daemon-reload
-    - crowd | systemctl restart crowd.service
+    - systemctl daemon-reload
+    - systemctl restart crowd.service
 
 - name: patch {{ crowd_catalina }}/build.properties
   ini_file:
@@ -107,9 +107,9 @@
     no_extra_spaces: true
     state: "present"
   notify:
-    - crowd | update build with ant
-    - crowd | systemctl daemon-reload
-    - crowd | systemctl restart crowd.service
+    - update build with ant
+    - systemctl daemon-reload
+    - systemctl restart crowd.service
 
 - name: flush handlers
   ansible.builtin.meta: flush_handlers
@@ -138,8 +138,8 @@
       group: "{{ crowd_group }}"
       mode: "0755"
   notify:
-    - crowd | systemctl daemon-reload
-    - crowd | systemctl restart crowd.service
+    - systemctl daemon-reload
+    - systemctl restart crowd.service
 
 - name: prepare files
   ansible.builtin.file:
@@ -162,8 +162,8 @@
       group: "{{ crowd_group }}"
       mode: "0755"
   notify:
-    - crowd | systemctl daemon-reload
-    - crowd | systemctl restart crowd.service
+    - systemctl daemon-reload
+    - systemctl restart crowd.service
 
 - name: patch {{ crowd_catalina }}/apache-tomcat/conf/web.xml
   vars:
@@ -176,7 +176,7 @@
     value: "{{ crowd_session_timeout | int }}"
     state: "present"
   notify:
-    - crowd | systemctl restart crowd.service
+    - systemctl restart crowd.service
 
 - name: flush handlers
   ansible.builtin.meta: flush_handlers
