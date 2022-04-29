@@ -1,10 +1,10 @@
 ---
 
-- name: test if crowd_destination is set correctly
+- name: test if crowd_home is set correctly
   ansible.builtin.assert:
     that:
-      - crowd_destination is defined
-      - crowd_destination is string
+      - crowd_home is defined
+      - crowd_home is string
     quiet: yes
 
 - name: test if crowd_version is set correctly
@@ -14,23 +14,9 @@
       - crowd_version is string
     quiet: yes
 
-- name: test if crowd_output is set correctly
+- name: test if crowd_release is set correctly
   ansible.builtin.assert:
     that:
-      - crowd_output is defined
-      - crowd_output is string
-    quiet: yes
-
-- name: test if crowd_run_now is set correctly
-  ansible.builtin.assert:
-    that:
-      - crowd_run_now is defined
-      - crowd_run_now is boolean
-    quiet: yes
-
-- name: test if crowd_cronjob is set correctly
-  ansible.builtin.assert:
-    that:
-      - crowd_cronjob is defined
-      - crowd_cronjob is boolean
+      - crowd_release is defined
+      - crowd_release is string
     quiet: yes
