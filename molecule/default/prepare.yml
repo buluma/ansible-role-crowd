@@ -3,6 +3,11 @@
   remote_user: root
   become: true
   gather_facts: false
+
+  roles:
+    - role: buluma.bootstrap
+    - role: buluma.java
+
   tasks:
     - name: redhat | subscription-manager register
       ansible.builtin.raw: |

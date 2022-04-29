@@ -46,5 +46,6 @@ crowd_jvm_support_recommended_args: >-
   -XX:+UnlockExperimentalVMOptions
   -XX:+UseCGroupMemoryLimitForHeap
   -XX:MaxRAMFraction=1
+
 # Session timeout (in minutes).
 crowd_session_timeout: "120"
