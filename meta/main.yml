@@ -3,7 +3,7 @@ galaxy_info:
   author: Michael Buluma
   namespace: buluma
   role_name: crowd
-  description: Install and configure crowd on your system.
+  description: Install and configure Atlassian Crowd on your system.
   license: Apache-2.0
   company: none
   min_ansible_version: "2.10"

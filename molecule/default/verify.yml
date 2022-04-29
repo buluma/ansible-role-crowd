@@ -5,5 +5,29 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
-      ansible.builtin.ping:
+    - name: check port
+      ansible.builtin.wait_for:
+        port: "8095"
+        timeout: "300"
+        delay: "10"
+      async: "300"
+      poll: "10"
+      register: result
+      until: result is succeeded
+      retries: 30
+
+    - name: check page
+      ansible.builtin.uri:
+        url: "http://localhost:8095"
+        status_code: "200"
+        timeout: "300"
+        return_content: true
+      async: "300"
+      poll: "10"
+      register: result
+      until: result.status == 200
+      retries: 30
+
+    - name: check result
+      ansible.builtin.fail:
+      when: "'crowd' not in result.content"
