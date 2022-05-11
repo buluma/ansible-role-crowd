@@ -21,7 +21,16 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: yes
     pre_build_image: yes
+    tty: true
+    environment:
+      container: docker
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      interpreter_python: auto_legacy_silent
+      callback_whitelist: profile_tasks
+    ssh_connection:
+      pipelining: true
 verifier:
   name: ansible
