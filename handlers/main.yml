@@ -1,7 +1,7 @@
 ---
 # handlers file for crowd
 
-- name: crowd | update build with ant
+- name: Crowd | update build with ant
   ansible.builtin.shell: |
     set -euxo pipefail
     cd {{ crowd_catalina }}
@@ -13,13 +13,13 @@
   register: result
   changed_when: result is not succeeded
 
-- name: crowd | systemctl daemon-reload
+- name: Crowd | systemctl daemon-reload
   ansible.builtin.systemd:
     daemon_reload: true
   changed_when: false
   failed_when: false
 
-- name: crowd | systemctl restart crowd.service
+- name: Crowd | systemctl restart crowd.service
   ansible.builtin.service:
     name: "crowd.service"
     state: "restarted"
