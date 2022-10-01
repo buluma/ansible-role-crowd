@@ -3,8 +3,6 @@ roles:
   - name: buluma.bootstrap
   - name: buluma.java
   - name: alvistack.openjdk
-    src: https://github.com/alvistack/ansible-role-openjdk
-    version: develop
 collections:
   - name: operator_sdk.util
     src: https://galaxy.ansible.com
