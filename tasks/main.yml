@@ -107,7 +107,7 @@
     no_extra_spaces: true
     state: "present"
   notify:
-    - crowd | update build with ant
+    - Crowd | update build with ant
     - Crowd | systemctl daemon-reload
     - Crowd | systemctl restart crowd.service
 
