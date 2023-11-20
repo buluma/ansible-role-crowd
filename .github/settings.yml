@@ -5,4 +5,4 @@
 repository:
   description: Install and configure crowd on your system.
   homepage: https://buluma.github.io/
-  topics: crowd, ansible, molecule, tox, playbook, hacktoberfest
+  topics: crowd, ansible, molecule, tox, playbook
