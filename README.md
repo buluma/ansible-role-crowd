@@ -1,10 +1,10 @@
-# [Ansible role crowd](#crowd)
+# Ansible role [crowd](https://galaxy.ansible.com/ui/standalone/roles/buluma/crowd/documentation)
 
 Install and configure crowd on your system.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-crowd/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-crowd/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-crowd.svg)](https://github.com/buluma/ansible-role-crowd/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-crowd.svg)](https://github.com/buluma/ansible-role-crowd/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-crowd.svg)](https://github.com/buluma/ansible-role-crowd/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-crowd/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-crowd/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-crowd.svg)](https://github.com/buluma/ansible-role-crowd/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-crowd.svg)](https://github.com/buluma/ansible-role-crowd/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-crowd.svg)](https://github.com/buluma/ansible-role-crowd/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/crowd)](https://galaxy.ansible.com/ui/standalone/roles/buluma/crowd/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
