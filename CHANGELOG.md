@@ -1,16 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-crowd/tree/HEAD)
+## [0.1.0](https://github.com/buluma/ansible-role-crowd/tree/0.1.0) (2022-04-29)
 
-[Full Changelog](https://github.com/buluma/ansible-role-crowd/compare/v0.1.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-crowd/compare/db9ff70baf9a74e2b2b3c37c7d7ad466c2b08d23...0.1.0)
 
-**Closed issues:**
+**Merged pull requests:**
 
-- Add to tracker [\#1](https://github.com/buluma/ansible-role-crowd/issues/1)
-
-## [v0.1.0](https://github.com/buluma/ansible-role-crowd/tree/v0.1.0) (2022-04-15)
-
-[Full Changelog](https://github.com/buluma/ansible-role-crowd/compare/5605c39c2d1cd428ee42c8d0c59e88be16b7c537...v0.1.0)
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.4 to 1.0.5 [\#1](https://github.com/buluma/ansible-role-crowd/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 
 
