@@ -1,0 +1,13 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "crowd" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.bootstrap" [fillcolor=green style=filled]
+    "buluma.java" [fillcolor=green style=filled]
+    "alvistack.openjdk" [fillcolor=green style=filled]
+  }
+  "crowd" -> "buluma.bootstrap"
+  "crowd" -> "buluma.java"
+  "crowd" -> "alvistack.openjdk"
+}
