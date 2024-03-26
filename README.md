@@ -14,8 +14,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   roles:
     - role: buluma.crowd
@@ -273,4 +273,3 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [Shadow Walker](https://buluma.github.io/)
-
