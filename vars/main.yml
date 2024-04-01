@@ -9,7 +9,7 @@ _crowd_requirements:
 
 crowd_requirements: "{{ _crowd_requirements[ansible_os_family] | default(_crowd_requirements['default'] ) }}"
 
-crowd_repository: "https://github.com/CISOfy/crowd.git"
+# crowd_repository: "https://github.com/CISOfy/crowd.git"
 
 # Vars v2
 _postgresql_jdbc_version:
