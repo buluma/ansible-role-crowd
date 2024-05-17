@@ -107,7 +107,16 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - name: debian | apt-get install *.deb
       ansible.builtin.raw: |
         set -eu
-        DEBIAN_FRONTEND=noninteractive apt-get install -y bzip2 ca-certificates curl gcc gnupg gzip hostname iproute2 passwd procps python3 python3-apt python3-jmespath python3-lxml python3-pip python3-setuptools python3-venv python3-virtualenv python3-wheel rsync sudo tar unzip util-linux xz-utils zip
+        DEBIAN_FRONTEND=noninteractive apt-get install -y bzip2 ca-certificates curl gcc gnupg gzip hostname iproute2 passwd procps python3 python3-apt python3-jmespath python3-lxml python3-pip python3-setuptools python3-venv python3-virtualenv python3-wheel rsync sudo tar unzip util-linux zip
+      when: ansible_os_family | lower == "debian"
+      changed_when: false
+      failed_when: false
+
+    # TODO: Pinning due to CVE-2024-3094
+    - name: debian | Try to install xz-utils packages
+      ansible.builtin.pip:
+        name: xz-utils==5.4.6
+        state: present
       when: ansible_os_family | lower == "debian"
       changed_when: false
       failed_when: false

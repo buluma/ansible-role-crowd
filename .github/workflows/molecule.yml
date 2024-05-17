@@ -67,6 +67,8 @@ jobs:
           - image: "docker-molecule-images"
             tag: "opensuse"
           - image: "docker-molecule-images"
+            tag: "ubuntu_latest"
+          - image: "docker-molecule-images"
             tag: "focal"
           - image: "docker-molecule-images"
             tag: "bionic"
