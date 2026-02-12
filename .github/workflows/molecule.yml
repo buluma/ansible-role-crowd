@@ -42,8 +42,12 @@ jobs:
         distro:
           - image: "docker-molecule-images"
             tag: "amazonlinux2023"
+          - image: "docker-molecule-images"
+            tag: "amazonlinux1"
           - image: "enterpriselinux"
             tag: "8"
+          - image: "enterpriselinux"
+            tag: "latest"
           - image: "docker-molecule-images"
             tag: "latest"
           - image: "docker-molecule-images"
