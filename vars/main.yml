@@ -7,7 +7,7 @@ _crowd_requirements:
   RedHat:
     - fontconfig
 
-crowd_requirements: "{{ _crowd_requirements[ansible_os_family] | default(_crowd_requirements['default'] ) }}"
+crowd_requirements: "{{ _crowd_requirements[ansible_os_family] | default(_crowd_requirements['default']) }}"
 
 # crowd_repository: "https://github.com/CISOfy/crowd.git"
 

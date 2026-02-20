@@ -97,7 +97,7 @@
     - Crowd | systemctl daemon-reload
     - Crowd | systemctl restart crowd.service
 
-- name: Patch {{ crowd_catalina }}/build.properties
+- name: Patch build.properties in {{ crowd_catalina }}/build.properties
   community.general.ini_file:
     path: "{{ crowd_catalina }}/build.properties"
     section: ""
@@ -165,7 +165,7 @@
     - Crowd | systemctl daemon-reload
     - Crowd | systemctl restart crowd.service
 
-- name: Patch {{ crowd_catalina }}/apache-tomcat/conf/web.xml
+- name: Patch web.xml in {{ crowd_catalina }}/apache-tomcat/conf/web.xml
   vars:
     ansible_python_interpreter: "python3"
   community.general.xml:
