@@ -25,7 +25,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 
 ```yaml
 ---
-- hosts: all
+- name: Prepare base environment
+  hosts: all
   remote_user: root
   become: true
   gather_facts: false
@@ -35,7 +36,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: buluma.java
 
   tasks:
-    - name: redhat | subscription-manager register
+    - name: Redhat | subscription-manager register
       ansible.builtin.raw: |
         set -eu
         subscription-manager register \
@@ -45,7 +46,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: debian | apt-get install python3
+    - name: Debian | apt-get install python3
       ansible.builtin.raw: |
         set -eu
         apt-get update
@@ -53,7 +54,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: redhat | yum install python3
+    - name: Redhat | yum install python3
       ansible.builtin.raw: |
         set -eu
         yum makecache
@@ -61,7 +62,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: suse | zypper install python3
+    - name: Suse | zypper install python3
       ansible.builtin.raw: |
         set -eu
         zypper -n --gpg-auto-import-keys refresh
@@ -69,18 +70,19 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-- hosts: all
+- name: Prepare tasks
+  hosts: all
   remote_user: root
   become: true
   tasks:
-    - name: cp -rfT /etc/skel /root
+    - name: Cp -rfT /etc/skel /root
       ansible.builtin.raw: |
         set -eu
         cp -rfT /etc/skel /root
       changed_when: false
       failed_when: false
 
-    - name: setenforce 0
+    - name: Setenforce 0
       ansible.builtin.raw: |
         set -eu
         setenforce 0
@@ -88,7 +90,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: systemctl stop firewalld.service
+    - name: Systemctl stop firewalld.service
       ansible.builtin.raw: |
         set -eu
         systemctl stop firewalld.service
@@ -96,7 +98,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: systemctl stop ufw.service
+    - name: Systemctl stop ufw.service
       ansible.builtin.raw: |
         set -eu
         systemctl stop ufw.service
@@ -104,7 +106,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: debian | apt-get install *.deb
+    - name: Debian | apt-get install *.deb
       ansible.builtin.raw: |
         set -eu
         DEBIAN_FRONTEND=noninteractive apt-get install -y bzip2 ca-certificates curl gcc gnupg gzip hostname iproute2 passwd procps python3 python3-apt python3-jmespath python3-lxml python3-pip python3-setuptools python3-venv python3-virtualenv python3-wheel rsync sudo tar unzip util-linux zip
@@ -113,7 +115,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       failed_when: false
 
     # TODO: Pinning due to CVE-2024-3094
-    - name: debian | Try to install xz-utils packages
+    - name: Debian | Try to install xz-utils packages
       ansible.builtin.pip:
         name: xz-utils==5.4.6
         state: present
@@ -121,7 +123,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: fedora | yum install *.rpm
+    - name: Fedora | yum install *.rpm
       ansible.builtin.raw: |
         set -eu
         yum install -y bzip2 ca-certificates curl gcc gnupg2 gzip hostname iproute procps-ng python3 python3-dnf-plugin-versionlock python3-jmespath python3-libselinux python3-lxml python3-pip python3-setuptools python3-virtualenv python3-wheel rsync shadow-utils sudo tar unzip util-linux xz yum-utils zip
@@ -129,7 +131,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: redhat-9 | yum install *.rpm
+    - name: Redhat-9 | yum install *.rpm
       ansible.builtin.raw: |
         set -eu
         yum-config-manager --enable crb || echo $?
@@ -140,7 +142,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: redhat-8 | yum install *.rpm
+    - name: Redhat-8 | yum install *.rpm
       ansible.builtin.raw: |
         set -eu
         yum install -y http://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -149,7 +151,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: redhat-7 | yum install *.rpm
+    - name: Redhat-7 | yum install *.rpm
       ansible.builtin.raw: |
         set -eu
         subscription-manager repos --enable=rhel-7-server-optional-rpms || echo $?
@@ -159,7 +161,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
       changed_when: false
       failed_when: false
 
-    - name: suse | zypper -n install *.rpm
+    - name: Suse | zypper -n install *.rpm
       ansible.builtin.raw: |
         set -eu
         zypper -n install -y bzip2 ca-certificates curl gcc gpg2 gzip hostname iproute2 procps python3 python3-jmespath python3-lxml python3-pip python3-setuptools python3-virtualenv python3-wheel rsync shadow sudo tar unzip util-linux xz zip
@@ -216,7 +218,6 @@ crowd_catalina_connector_proxyport:
 crowd_catalina_connector_scheme: "http"
 crowd_catalina_connector_secure: "false"
 crowd_catalina_context_path:
-
 # Atlassian Support recommended JVM arguments.
 crowd_jvm_support_recommended_args: >-
   -Datlassian.plugins.enable.wait=300
