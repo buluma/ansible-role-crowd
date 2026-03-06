@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-crowd/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-crowd/compare/0.1.0...HEAD)
+
+**Merged pull requests:**
+
+- Bump docker/setup-buildx-action from 3 to 4 [\#13](https://github.com/buluma/ansible-role-crowd/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [0.1.0](https://github.com/buluma/ansible-role-crowd/tree/0.1.0) (2022-04-29)
 
 [Full Changelog](https://github.com/buluma/ansible-role-crowd/compare/db9ff70baf9a74e2b2b3c37c7d7ad466c2b08d23...0.1.0)
