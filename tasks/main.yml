@@ -173,7 +173,7 @@
     xpath: "/ns:web-app/ns:session-config/ns:session-timeout"
     namespaces:
       ns: "http://xmlns.jcp.org/xml/ns/javaee"
-    value: "{{ crowd_session_timeout | int }}"
+    value: "{{ crowd_session_timeout | string }}"
     state: "present"
   notify:
     - Crowd | systemctl restart crowd.service
