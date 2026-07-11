@@ -63,7 +63,7 @@
       && rm -rf $TMP_DIR
   args:
     executable: "/bin/bash"
-    creates: "/var/log/ansible/{{ item.checksum }}-get_url.log"
+    creates: "{{ item.dest }}"
   loop:
     - "{{ crowd_download }}"
     - "{{ postgresql_jdbc_download }}"
