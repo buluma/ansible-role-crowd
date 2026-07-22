@@ -4,6 +4,7 @@
 - name: Crowd | update build with ant
   ansible.builtin.shell: |
     set -euxo pipefail
+    export JAVA_HOME="$(readlink -f /usr/bin/java | sed 's%/bin/java%%')"
     cd {{ crowd_catalina }}
     ./build.sh
     rm -rf apache-tomcat/conf/Catalina/localhost
