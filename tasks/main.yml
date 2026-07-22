@@ -48,6 +48,11 @@
       owner: "{{ crowd_owner }}"
       group: "{{ crowd_group }}"
 
+- name: Ensure curl is installed
+  ansible.builtin.package:
+    name: curl
+    state: present
+
 - name: Download archive
   ansible.builtin.shell: |
     set -euxo pipefail
