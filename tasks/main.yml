@@ -48,10 +48,17 @@
       owner: "{{ crowd_owner }}"
       group: "{{ crowd_group }}"
 
+- name: Check if curl is available
+  ansible.builtin.command: which curl
+  register: _crowd_curl_check
+  changed_when: false
+  failed_when: false
+
 - name: Ensure curl is installed
   ansible.builtin.package:
     name: curl
     state: present
+  when: _crowd_curl_check.rc != 0
 
 - name: Download archive
   ansible.builtin.shell: |
