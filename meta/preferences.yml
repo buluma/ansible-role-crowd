@@ -2,19 +2,15 @@
 # Pins the CI platform/version matrix for this role. Without this, ansible-generator
 # falls back to default_platforms and silently discards these choices on regenerate.
 platforms:
+  # Crowd 4.4 needs java_version 11 (see molecule/default/prepare.yml).
+  # Excludes EL10, Fedora (all versions), and Debian 12/13: none of them
+  # package java-11-openjdk anymore.
   - name: EL
     versions:
-      - "10"
       - "9"
   - name: Debian
     versions:
-      - all
-  - name: Fedora
-    versions:
-      # Excludes 45: it ships Python 3.15.0b3, whose dataclasses module
-      # dropped _is_type, breaking ansible-core's AnsiballZ module wrapper.
-      - "44"
-      - "43"
+      - "11"
   - name: Ubuntu
     versions:
       - all
