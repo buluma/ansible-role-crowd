@@ -13,6 +13,12 @@ postgresql_jdbc_download: "{{ _postgresql_jdbc_download[postgresql_jdbc_version]
 # Crowd release.
 crowd_release: "4.4"
 
+# Crowd 4.4's bundled Ant xmltask plugin uses an internal JDK XPath API that
+# Java 17+ blocks by default (JPMS strong encapsulation); Java 11 still
+# permits it. Pinned here rather than in buluma.java's shared defaults,
+# which other roles correctly rely on being newer.
+java_version: "11"
+
 # Crowd version.
 crowd_version: "{{ _crowd_version[crowd_release] }}"
 
