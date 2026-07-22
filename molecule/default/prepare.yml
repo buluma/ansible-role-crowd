@@ -36,3 +36,5 @@
   roles:
     - role: buluma.bootstrap
     - role: buluma.java
+      vars:
+        java_version: "11"
