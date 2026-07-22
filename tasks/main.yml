@@ -165,6 +165,21 @@
     - Crowd | systemctl daemon-reload
     - Crowd | systemctl restart crowd.service
 
+- name: Ensure lxml is available for XML module (system package)
+  ansible.builtin.package:
+    name: python3-lxml
+    state: present
+  register: _crowd_lxml_system_package
+  changed_when: false
+  failed_when: false
+
+- name: Ensure lxml is available for XML module (pip fallback)
+  ansible.builtin.pip:
+    name: lxml
+    state: present
+  when: _crowd_lxml_system_package is failed
+  changed_when: false
+
 - name: Patch web.xml in {{ crowd_catalina ~ '/apache-tomcat/conf/web.xml' }}
   vars:
     ansible_python_interpreter: "python3"
