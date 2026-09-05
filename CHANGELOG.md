@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- feat!: bump default Crowd to 6.3.1, drop Debian 11 from CI [\#18](https://github.com/buluma/ansible-role-crowd/pull/18) ([buluma](https://github.com/buluma))
 - Bump ansible/ansible-lint from 26.6.0 to 26.8.0 [\#17](https://github.com/buluma/ansible-role-crowd/pull/17) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [26.6.2](https://github.com/buluma/ansible-role-crowd/tree/26.6.2) (2026-07-22)
