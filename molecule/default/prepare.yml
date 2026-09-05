@@ -37,4 +37,4 @@
     - role: buluma.bootstrap
     - role: buluma.java
       vars:
-        java_version: "11"
+        java_version: "17"

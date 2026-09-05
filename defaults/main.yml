@@ -11,7 +11,7 @@ postgresql_jdbc_version: "{{ _postgresql_jdbc_version[postgresql_jdbc_release] }
 postgresql_jdbc_download: "{{ _postgresql_jdbc_download[postgresql_jdbc_version] }}"
 
 # Crowd release.
-crowd_release: "4.4"
+crowd_release: "6.3"
 
 # Crowd version.
 crowd_version: "{{ _crowd_version[crowd_release] }}"
@@ -40,10 +40,11 @@ crowd_catalina_connector_scheme: "http"
 crowd_catalina_connector_secure: "false"
 crowd_catalina_context_path:
 # Atlassian Support recommended JVM arguments.
+# UseCGroupMemoryLimitForHeap was dropped for good starting with Java 11
+# ("Unrecognized VM option") - container memory awareness is on by default
+# since Java 10 (UseContainerSupport), so it's no longer needed anyway.
 crowd_jvm_support_recommended_args: >-
   -Datlassian.plugins.enable.wait=300
-  -XX:+UnlockExperimentalVMOptions
-  -XX:+UseCGroupMemoryLimitForHeap
   -XX:MaxRAMFraction=1
 
 # Session timeout (in minutes).
