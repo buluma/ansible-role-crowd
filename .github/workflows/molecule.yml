@@ -49,7 +49,7 @@ jobs:
           - image: "docker-molecule-images"
             tag: "almalinux9"
           - image: "docker-molecule-images"
-            tag: "debian11"
+            tag: "debian12"
           - image: "docker-molecule-images"
             tag: "ubuntu2604"
           - image: "docker-molecule-images"
