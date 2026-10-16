@@ -7,6 +7,7 @@
 **Merged pull requests:**
 
 - Bump release-drafter/release-drafter from 7.9.0 to 7.10.0 [\#23](https://github.com/buluma/ansible-role-crowd/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 26.9.0 to 26.10.0 [\#22](https://github.com/buluma/ansible-role-crowd/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [26.10.9](https://github.com/buluma/ansible-role-crowd/tree/26.10.9) (2026-10-05)
 
