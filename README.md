@@ -62,6 +62,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   roles:
     - role: buluma.bootstrap
     - role: buluma.java
+      vars:
+        java_version: "17"
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -152,9 +154,8 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|10, 9|
-|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
-|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|44, 43|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|9|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|12|
 |[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.19, tests have been done on:
